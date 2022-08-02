@@ -1,0 +1,70 @@
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
+
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl('https://eamfndtst.lirr.org/web/base/logindisp?tenant=MNREAM')
+
+WebUI.setText(findTestObject('Object Repository/Page_MNREAM TEST Environment - Log In/input_User ID_userid'), 'c315950')
+
+WebUI.setEncryptedText(findTestObject('Object Repository/Page_MNREAM TEST Environment - Log In/input_Password_password'), 
+    'UKwFrax199c1CHPEIQcjvQ==')
+
+WebUI.takeFullPageScreenshotAsCheckpoint('Login')
+
+WebUI.click(findTestObject('Object Repository/Page_MNREAM TEST Environment - Log In/span_LOG IN'))
+
+WebUI.click(findTestObject('Object Repository/Page_MNREAM TEST Environment - Start Center/span_Equipment'))
+
+WebUI.click(findTestObject('Object Repository/Page_MNREAM TEST Environment - Start Center/span_Positions'))
+
+WebUI.takeFullPageScreenshotAsCheckpoint('Selecting Positions')
+
+WebUI.click(findTestObject('Object Repository/Page_MNREAM TEST Environment - Positions  L_156548/div_Filter_uxcombobox-1336-trigger-picker'))
+
+WebUI.click(findTestObject('Object Repository/Page_MNREAM TEST Environment - Positions  L_156548/li_GIS ID'))
+
+WebUI.click(findTestObject('Object Repository/Page_MNREAM TEST Environment - Positions  L_156548/span_'))
+
+WebUI.click(findTestObject('Object Repository/Page_MNREAM TEST Environment - Positions  L_156548/span_Is Not Empty'))
+
+WebUI.takeFullPageScreenshotAsCheckpoint('Filtering results')
+
+WebUI.click(findTestObject('Object Repository/Page_MNREAM TEST Environment - Positions  L_156548/span_Run'))
+
+WebUI.doubleClick(findTestObject('Object Repository/Page_MNREAM TEST Environment - Positions  L_156548/div_DAN-SIGNAL-00001'))
+
+WebUI.setText(findTestObject('Object Repository/Page_MNREAM TEST Environment - Positions  R_1aea8f/input_Position_equipmentdesc'), 
+    'DAN-CP400-1N-SIGNAL - Test')
+
+WebUI.takeFullPageScreenshotAsCheckpoint('Changing name of asset')
+
+WebUI.click(findTestObject('Object Repository/Page_MNREAM TEST Environment - Positions  R_1aea8f/span_DAN-CP400-1N-SIGNAL_button-1226-btnIconEl'))
+
+WebUI.setText(findTestObject('Object Repository/Page_MNREAM TEST Environment - Positions  R_1aea8f/input_Position_equipmentdesc'), 
+    'DAN-CP400-1N-SIGNAL')
+
+WebUI.takeFullPageScreenshotAsCheckpoint('Reverting name')
+
+WebUI.click(findTestObject('Object Repository/Page_MNREAM TEST Environment - Positions  R_1aea8f/span_DAN-CP400-1N-SIGNAL_button-1226-btnIconEl'))
+
+WebUI.click(findTestObject('Object Repository/Page_MNREAM TEST Environment - Positions  R_1aea8f/span_DAN-CP400-1N-SIGNAL_splitbutton-1224-b_d8370c'))
+
+WebUI.closeBrowser()
+
